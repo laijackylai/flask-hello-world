@@ -4,12 +4,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    '''
+    default route
+    '''
+    return 'Search Canadian Fire Data with NLTK(/data?strategy=<STRATEGY>&query=<QUERY>)'
 
-@app.route('/about')
-def about():
-    return 'About'
-
-@app.route('/data')
+@app.route('/data', methods=['GET'])
 def data():
+    '''
+    get nltk data
+    '''
     return 'Data'
